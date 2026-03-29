@@ -1,0 +1,173 @@
+[gd_scene format=3 uid="uid://b17cuno5pitpy"]
+
+[ext_resource type="Script" uid="uid://cq50b54vnhf6g" path="res://Scripts/Villagers/villagers.gd" id="1_sqena"]
+[ext_resource type="Texture2D" uid="uid://3jsm888ygya8" path="res://Graphics/Red Warrior/Warrior_Red.png" id="2_scc8v"]
+[ext_resource type="Script" uid="uid://b3icxw7hfu1ts" path="res://Scripts/Villagers/Components/inventory.gd" id="3_c06kp"]
+[ext_resource type="Script" uid="uid://cf3qc043ee162" path="res://Scripts/Items/items.gd" id="4_8mdna"]
+[ext_resource type="Script" uid="uid://b6cynrxc3fod0" path="res://Scripts/Villagers/Components/movement.gd" id="4_l3n4j"]
+[ext_resource type="Script" uid="uid://bs1h2muypvdae" path="res://Scripts/Villagers/Components/interaction.gd" id="5_8mdna"]
+[ext_resource type="Script" uid="uid://bwvgr4ovrsxn2" path="res://Scripts/Villagers/Components/progression.gd" id="6_7yid6"]
+[ext_resource type="Script" uid="uid://bfgexwdjyhho2" path="res://Scripts/Villagers/Actions/activity.gd" id="7_7luqd"]
+[ext_resource type="PackedScene" uid="uid://dveoy4o3p1gck" path="res://Scenes/Villagers/Actions/Action.tscn" id="8_l3n4j"]
+[ext_resource type="Script" uid="uid://duetbvlqaegy1" path="res://Scripts/Villagers/Actions/fishing.gd" id="9_7yid6"]
+[ext_resource type="Script" uid="uid://d24uyltlqsert" path="res://Scripts/Villagers/Actions/forage.gd" id="9_8mdna"]
+[ext_resource type="Texture2D" uid="uid://dmub6vv6rboui" path="res://Graphics/Fruits/Kiwi.png" id="11_atdov"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sowh"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7cbt1"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7wok7"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pf6dv"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbgaj"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_84270"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ks127"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_roesw"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hn3fi"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ht1tu"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0waf"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1ueh5"]
+atlas = ExtResource("2_scc8v")
+region = Rect2(960, 192, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_getpj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sowh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7cbt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7wok7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pf6dv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbgaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_84270")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ks127")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_roesw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hn3fi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ht1tu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0waf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1ueh5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 12.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ryguw"]
+size = Vector2(64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3jiif"]
+atlas = ExtResource("11_atdov")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_mfhmu"]
+script = ExtResource("4_8mdna")
+name = "Cocount"
+description = "A refreshing tropical treat."
+icon = SubResource("AtlasTexture_3jiif")
+type = 1
+metadata/_custom_type_script = "uid://cf3qc043ee162"
+
+[node name="Villager" type="Area2D" unique_id=23260500 groups=["villagers"]]
+script = ExtResource("1_sqena")
+
+[node name="Body" type="AnimatedSprite2D" parent="." unique_id=1343325534]
+position = Vector2(0, -32)
+sprite_frames = SubResource("SpriteFrames_getpj")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.92733
+
+[node name="Items" type="Sprite2D" parent="." unique_id=1655986146]
+texture_filter = 1
+scale = Vector2(3, 3)
+offset = Vector2(0, -32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=174587234]
+shape = SubResource("RectangleShape2D_ryguw")
+
+[node name="Components" type="Node" parent="." unique_id=54331842]
+
+[node name="Inventory" type="Node" parent="Components" unique_id=465575155 node_paths=PackedStringArray("sprite")]
+script = ExtResource("3_c06kp")
+sprite = NodePath("../../Items")
+
+[node name="Movement" type="Node" parent="Components" unique_id=1104731353 node_paths=PackedStringArray("body")]
+script = ExtResource("4_l3n4j")
+body = NodePath("../../Body")
+
+[node name="Interaction" type="Node" parent="Components" unique_id=33348464]
+script = ExtResource("5_8mdna")
+
+[node name="Progression" type="Node" parent="Components" unique_id=2010042761]
+script = ExtResource("6_7yid6")
+
+[node name="Activity" type="Node" parent="Components" unique_id=1048489501]
+script = ExtResource("7_7luqd")
+
+[node name="Foraging" parent="Components/Activity" unique_id=1121930634 instance=ExtResource("8_l3n4j")]
+script = ExtResource("9_8mdna")
+
+[node name="Fishing" parent="Components/Activity" unique_id=701930860 instance=ExtResource("8_l3n4j")]
+script = ExtResource("9_7yid6")
+item = SubResource("Resource_mfhmu")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

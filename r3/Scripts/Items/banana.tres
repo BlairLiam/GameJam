@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="Items" format=3 uid="uid://dsxsk685qoe3r"]
+
+[ext_resource type="Texture2D" uid="uid://cwdvdkv8edxih" path="res://Graphics/Fruits/Bananas.png" id="1_k136k"]
+[ext_resource type="Script" uid="uid://cf3qc043ee162" path="res://Scripts/Items/items.gd" id="2_f0ee3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8xc4"]
+atlas = ExtResource("1_k136k")
+region = Rect2(0, 0, 32, 32)
+
+[resource]
+script = ExtResource("2_f0ee3")
+name = "Fish"
+description = "Fresh fish."
+icon = SubResource("AtlasTexture_q8xc4")
+type = 8
+metadata/_custom_type_script = "uid://cf3qc043ee162"

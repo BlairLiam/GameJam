@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://fvhr2cstdlra"]
+
+[ext_resource type="PackedScene" uid="uid://v0lof5r72875" path="res://Scenes/Trees/FruitTrees.tscn" id="1_plaq5"]
+[ext_resource type="Script" uid="uid://coe6rx1kyity5" path="res://Scripts/Trees/mango_tree.gd" id="2_2xjmv"]
+[ext_resource type="Texture2D" uid="uid://bgqbwrla2cld7" path="res://Graphics/Trees/tree2B.png" id="3_b2pvq"]
+[ext_resource type="Texture2D" uid="uid://dukatnio56cik" path="res://Graphics/Fruits/Orange.png" id="3_ot2ro"]
+[ext_resource type="Script" uid="uid://cf3qc043ee162" path="res://Scripts/Items/items.gd" id="4_cufwj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_psyo4"]
+atlas = ExtResource("3_ot2ro")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_0uijc"]
+script = ExtResource("4_cufwj")
+name = "Mango"
+description = "This is a mango"
+icon = SubResource("AtlasTexture_psyo4")
+type = 3
+metadata/_custom_type_script = "uid://cf3qc043ee162"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uemhg"]
+atlas = ExtResource("3_b2pvq")
+region = Rect2(1280, 0, 320, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_07eo0"]
+atlas = ExtResource("3_b2pvq")
+region = Rect2(960, 0, 320, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sy3k"]
+atlas = ExtResource("3_b2pvq")
+region = Rect2(640, 0, 320, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_udvc0"]
+atlas = ExtResource("3_b2pvq")
+region = Rect2(320, 0, 320, 448)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1ino"]
+atlas = ExtResource("3_b2pvq")
+region = Rect2(0, 0, 320, 448)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3od3b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uemhg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_07eo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sy3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_udvc0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1ino")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Mango Tree" unique_id=578119270 instance=ExtResource("1_plaq5")]
+script = ExtResource("2_2xjmv")
+fruit = SubResource("Resource_0uijc")
+current_condition = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=479792084]
+sprite_frames = SubResource("SpriteFrames_3od3b")
+autoplay = "default"
+frame = 4
+offset = Vector2(-5, -175)

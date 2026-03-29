@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://tccn755hp3f1"]
+
+[ext_resource type="PackedScene" uid="uid://v0lof5r72875" path="res://Scenes/Trees/FruitTrees.tscn" id="1_b32sy"]
+[ext_resource type="Script" uid="uid://cmacfmtjkgu8e" path="res://Scripts/Trees/mangrove_tree.gd" id="2_w6atf"]
+[ext_resource type="Texture2D" uid="uid://c8i41n5rm2kun" path="res://Graphics/Trees/mangrove.png" id="3_6yy60"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fysvh"]
+atlas = ExtResource("3_6yy60")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4trfo"]
+atlas = ExtResource("3_6yy60")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1efh"]
+atlas = ExtResource("3_6yy60")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f3soh"]
+atlas = ExtResource("3_6yy60")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v233c"]
+atlas = ExtResource("3_6yy60")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w6atf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fysvh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4trfo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1efh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f3soh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v233c")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Fruit Tree" unique_id=578119270 instance=ExtResource("1_b32sy")]
+script = ExtResource("2_w6atf")
+fruits = 1000
+max_fruits = 1000
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=350341181]
+sprite_frames = SubResource("SpriteFrames_w6atf")
+frame = 4
+offset = Vector2(0, -225)

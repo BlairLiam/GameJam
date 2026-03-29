@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://di7odugko10xx"]
+
+[ext_resource type="PackedScene" uid="uid://dradovmv7jhj4" path="res://Scenes/Trees/Trees.tscn" id="1_2i28y"]
+[ext_resource type="Script" uid="uid://chelveb6b0tt3" path="res://Scripts/Trees/molave_tree.gd" id="2_p6k56"]
+[ext_resource type="Texture2D" uid="uid://t8nmso5muho" path="res://Graphics/Trees/tree3.png" id="3_p6k56"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x1wlb"]
+atlas = ExtResource("3_p6k56")
+region = Rect2(2048, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms7iu"]
+atlas = ExtResource("3_p6k56")
+region = Rect2(1536, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k2xme"]
+atlas = ExtResource("3_p6k56")
+region = Rect2(1024, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pixo1"]
+atlas = ExtResource("3_p6k56")
+region = Rect2(512, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_38qut"]
+atlas = ExtResource("3_p6k56")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p22sa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x1wlb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ms7iu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k2xme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pixo1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_38qut")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Molave Tree" unique_id=578119270 instance=ExtResource("1_2i28y")]
+script = ExtResource("2_p6k56")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=1527545375]
+sprite_frames = SubResource("SpriteFrames_p22sa")
+frame = 4
+offset = Vector2(10, -175)

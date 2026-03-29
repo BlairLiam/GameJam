@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bjlnouw4v2582"]
+
+[ext_resource type="PackedScene" uid="uid://v0lof5r72875" path="res://Scenes/Trees/FruitTrees.tscn" id="1_cxttc"]
+[ext_resource type="Script" uid="uid://1guqhpxhm471" path="res://Scripts/Trees/cherry_tree.gd" id="2_6c0s2"]
+[ext_resource type="Texture2D" uid="uid://be8k500chlvfd" path="res://Graphics/Trees/tree1.png" id="2_n42wn"]
+[ext_resource type="Texture2D" uid="uid://wx5i8fik7ylm" path="res://Graphics/Fruits/Cherries.png" id="3_sdo42"]
+[ext_resource type="Script" uid="uid://cf3qc043ee162" path="res://Scripts/Items/items.gd" id="4_cc7d4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avljd"]
+atlas = ExtResource("3_sdo42")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="Resource" id="Resource_66wre"]
+script = ExtResource("4_cc7d4")
+name = "Lychee"
+description = "This is a Lychee"
+icon = SubResource("AtlasTexture_avljd")
+type = 2
+metadata/_custom_type_script = "uid://cf3qc043ee162"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxttc"]
+atlas = ExtResource("2_n42wn")
+region = Rect2(960, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n42wn"]
+atlas = ExtResource("2_n42wn")
+region = Rect2(640, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c0s2"]
+atlas = ExtResource("2_n42wn")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdo42"]
+atlas = ExtResource("2_n42wn")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_66wre"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxttc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n42wn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c0s2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdo42")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Cherry Tree" unique_id=578119270 instance=ExtResource("1_cxttc")]
+script = ExtResource("2_6c0s2")
+fruit = SubResource("Resource_66wre")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=2079193844]
+sprite_frames = SubResource("SpriteFrames_66wre")
+frame = 3
+frame_progress = 1.0
+offset = Vector2(-5, -175)

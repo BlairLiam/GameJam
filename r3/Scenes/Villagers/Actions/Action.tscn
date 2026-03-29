@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dveoy4o3p1gck"]
+
+[ext_resource type="Script" uid="uid://b5no0re751e4p" path="res://Scripts/Villagers/Actions/action.gd" id="1_chrhu"]
+
+[node name="Action" type="Node" unique_id=1121930634]
+script = ExtResource("1_chrhu")

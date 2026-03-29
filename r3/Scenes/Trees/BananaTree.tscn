@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://et44cbtcmknn"]
+
+[ext_resource type="PackedScene" uid="uid://v0lof5r72875" path="res://Scenes/Trees/FruitTrees.tscn" id="1_scwi2"]
+[ext_resource type="Script" uid="uid://cx11auasanxes" path="res://Scripts/Trees/banana_tree.gd" id="2_7mrp1"]
+[ext_resource type="Texture2D" uid="uid://wxtcp0h0rcu2" path="res://Graphics/Trees/banana.png" id="2_kw7pi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mrp1"]
+atlas = ExtResource("2_kw7pi")
+region = Rect2(0, 0, 320, 320)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yhy5e"]
+atlas = ExtResource("2_kw7pi")
+region = Rect2(320, 0, 320, 320)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uhaoc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mrp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yhy5e")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Banana Tree" unique_id=578119270 instance=ExtResource("1_scwi2")]
+script = ExtResource("2_7mrp1")
+HP = 100
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=447306897]
+sprite_frames = SubResource("SpriteFrames_uhaoc")
+frame = 1
+offset = Vector2(5, -150)

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c3o8ncq0ies31"]
+
+[ext_resource type="PackedScene" uid="uid://dradovmv7jhj4" path="res://Scenes/Trees/Trees.tscn" id="1_2g4x3"]
+[ext_resource type="Texture2D" uid="uid://drrjxcujxpm18" path="res://Graphics/Trees/tree2.png" id="2_4tqul"]
+[ext_resource type="Script" uid="uid://msi7y7dtrqd4" path="res://Scripts/Trees/tree.gd" id="2_pm4j8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g4x3"]
+atlas = ExtResource("2_4tqul")
+region = Rect2(320, 0, 320, 320)
+
+[node name="Tree" unique_id=578119270 instance=ExtResource("1_2g4x3")]
+script = ExtResource("2_pm4j8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="1" unique_id=1715730526]
+texture = SubResource("AtlasTexture_2g4x3")
+offset = Vector2(-5, -125)

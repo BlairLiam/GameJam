@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://cslbem10d755a"]
+
+[ext_resource type="Script" uid="uid://cdjeuwrwgthf3" path="res://Scripts/Structures/kubo.gd" id="1_f6emm"]
+[ext_resource type="Texture2D" uid="uid://dg6r7780wlwvy" path="res://Graphics/Buildings/House/House_Red.png" id="2_hkk6c"]
+[ext_resource type="Texture2D" uid="uid://cosk5txebw2an" path="res://Graphics/Buildings/House/House_Construction.png" id="3_c5yml"]
+[ext_resource type="Texture2D" uid="uid://tbm4jpcqkyyf" path="res://Graphics/Buildings/House/House_Destroyed.png" id="3_hkk6c"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5yml"]
+atlas = ExtResource("3_hkk6c")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v5shv"]
+atlas = ExtResource("2_hkk6c")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub8ik"]
+atlas = ExtResource("3_c5yml")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64vjt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5yml")
+}],
+"loop": false,
+"name": &"destroyed",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v5shv")
+}],
+"loop": false,
+"name": &"repaired",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub8ik")
+}],
+"loop": false,
+"name": &"repairing",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n7wtd"]
+size = Vector2(64, 64)
+
+[node name="Kubo" type="Area2D" unique_id=1620113485 groups=["interactables", "kubo"]]
+script = ExtResource("1_f6emm")
+is_repaired = true
+metadata/_custom_type_script = "uid://oojorg43vgau"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=123930683]
+sprite_frames = SubResource("SpriteFrames_64vjt")
+animation = &"repaired"
+offset = Vector2(0, -80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1809421747]
+shape = SubResource("RectangleShape2D_n7wtd")

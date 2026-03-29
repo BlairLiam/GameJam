@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c60tqgd5tf7w0"]
+
+[ext_resource type="Script" uid="uid://dwbf3gukls11k" path="res://Scripts/Structures/storage_area.gd" id="1_n54np"]
+[ext_resource type="Texture2D" uid="uid://b6jlsgf3x3amo" path="res://Graphics/Buildings/Tower/Tower_Red.png" id="3_1n74y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dfuqi"]
+size = Vector2(64, 64)
+
+[node name="Storage Area" type="Area2D" unique_id=1869634908 groups=["interactables", "storage_area"]]
+script = ExtResource("1_n54np")
+metadata/_custom_type_script = "uid://oojorg43vgau"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=576964445]
+shape = SubResource("RectangleShape2D_dfuqi")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=978041670]
+texture = ExtResource("3_1n74y")
+offset = Vector2(0, -100)
