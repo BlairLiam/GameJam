@@ -29,8 +29,8 @@ func _input(event: InputEvent) -> void:
 		print(TimeManager.get_hour())
 		
 func _ready() -> void:
-	spawn_character(Vector2(32, 32))
-	spawn_character(Vector2(32, 544))
+	for i in range(20):
+		spawn_character(Vector2(32, 32))
 	
 func setup_grid() -> void:
 	path_grid.region = tile_layer.get_used_rect()
