@@ -15,15 +15,14 @@ func _ready() -> void:
 	TimeManager.hour_changed.connect(_on_hour_changed)
 	
 	movement.movement_finished.connect(_on_movement_reached_target)
+	movement.movement_interrupted.connect(stop)
 		
 	movement_timer.wait_time = 2.5
 	interaction_timer.wait_time = 2.5
 	
 	movement_timer.start()
 	
-func start() -> void:
-	movement_timer.stop()
-	
+func start() -> void:	
 	if villager.inventory.item.type != Items.Item.NOTHING:
 		storing()
 	else:
@@ -35,14 +34,11 @@ func start() -> void:
 			harvesting()
 			
 func stop() -> void:
-	movement_timer.stop()
 	interaction_timer.stop()
-	
-	print(movement_timer.is_stopped())
-	print(interaction_timer.is_stopped())
+	movement_timer.stop()
 
 func harvesting() -> void:
-	var fruit_tree = get_tree().get_nodes_in_group("fruit_trees").pick_random()
+	var fruit_tree: FruitTrees = get_tree().get_nodes_in_group("fruit_trees").pick_random()
 	if fruit_tree: movement.move_to(fruit_tree.global_position)
 
 func storing() -> void:
@@ -50,7 +46,7 @@ func storing() -> void:
 	if storage: movement.move_to(storage.global_position)
 
 func go_to_sleep_area() -> void:
-	var kubo = get_tree().get_nodes_in_group("kubo").pick_random()
+	var kubo: Interactables = get_tree().get_nodes_in_group("kubo").pick_random()
 	if kubo: movement.move_to(kubo.global_position)
 
 func _on_movement_reached_target() -> void:

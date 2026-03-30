@@ -23,10 +23,10 @@ func _input(event: InputEvent) -> void:
 		var end = tile_layer.local_to_map(click)
 		print(end)
 		
-	if event.is_action_pressed("debug"):
-		TimeManager.time += 0.1
+	if event.is_action_pressed("debug"): 
+		TimeManager.time += 1 / 24.0
 		TimeManager.emit_signal("hour_changed", TimeManager.get_hour())
-		print(TimeManager.get_hour())   
+		print(TimeManager.get_hour())
 		
 func _ready() -> void:
 	spawn_character(Vector2(32, 32))
