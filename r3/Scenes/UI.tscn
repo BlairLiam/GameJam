@@ -1,0 +1,431 @@
+[gd_scene format=3 uid="uid://dsnv0knced43t"]
+
+[ext_resource type="Script" uid="uid://bfxbpj4y1frm0" path="res://Scenes/ui.gd" id="1_j04uc"]
+[ext_resource type="Texture2D" uid="uid://c2hm8lu3ewk8k" path="res://Graphics/UI Elements/UI Elements/Banners and  Frames/01.png" id="2_vqx31"]
+[ext_resource type="FontFile" uid="uid://bi8jo6e8fmjpn" path="res://Graphics/UI Elements/UI Elements/Fonts/edo.ttf" id="3_b1goy"]
+[ext_resource type="Texture2D" uid="uid://cvr4jc3xlovtc" path="res://Graphics/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Regular.png" id="4_n04ve"]
+[ext_resource type="Texture2D" uid="uid://d1ymx1w4ys6h7" path="res://Graphics/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Pressed.png" id="5_wi7yl"]
+[ext_resource type="Texture2D" uid="uid://b2v7550xy7rmq" path="res://Graphics/UI Elements/UI Elements/Buttons/achievements.png" id="6_5q4fb"]
+[ext_resource type="Texture2D" uid="uid://c5stgj22lervf" path="res://Graphics/UI Elements/UI Elements/Banners/Banner_Slots.png" id="7_mqm5i"]
+[ext_resource type="Texture2D" uid="uid://copwt3nf5133n" path="res://Graphics/UI Elements/UI Elements/Buttons/SmallRedSquareButton_Regular.png" id="8_jnovg"]
+[ext_resource type="Texture2D" uid="uid://cjjj7uyqvpsti" path="res://Graphics/UI Elements/UI Elements/Buttons/unhide.png" id="9_13dyv"]
+[ext_resource type="Texture2D" uid="uid://b3ha655m5qbm0" path="res://Graphics/UI Elements/UI Elements/Buttons/hide.png" id="10_r71lk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3802"]
+atlas = ExtResource("2_vqx31")
+region = Rect2(65, 225, 62, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fevyy"]
+atlas = ExtResource("4_n04ve")
+region = Rect2(21, 16, 86, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hibaj"]
+atlas = ExtResource("5_wi7yl")
+region = Rect2(21, 16, 86, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdsj5"]
+atlas = ExtResource("2_vqx31")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1w6v2"]
+atlas = ExtResource("6_5q4fb")
+region = Rect2(171, 171, 216, 110)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueoa1"]
+atlas = ExtResource("7_mqm5i")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vcvc"]
+atlas = ExtResource("8_jnovg")
+region = Rect2(19, 17, 90, 94)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ee4r6"]
+atlas = ExtResource("9_13dyv")
+region = Rect2(171, 173, 215, 107)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gt3je"]
+atlas = ExtResource("10_r71lk")
+region = Rect2(171, 173, 215, 107)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1711804671]
+
+[node name="UI" type="Control" parent="." unique_id=179012773]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 1
+script = ExtResource("1_j04uc")
+
+[node name="NameTexturePanel" type="TextureRect" parent="UI" unique_id=1451034831]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 622.0
+offset_right = 678.0
+offset_bottom = 692.0
+texture = SubResource("AtlasTexture_b3802")
+
+[node name="NameLabel" type="Label" parent="UI/NameTexturePanel" unique_id=1354483453]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 92.0
+offset_top = -50.0
+offset_right = 162.0
+offset_bottom = -1.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b1goy")
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NameTextLabel" type="RichTextLabel" parent="UI/NameTexturePanel" unique_id=286531507]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0062305294
+anchor_right = 0.0062305294
+offset_left = 163.26169
+offset_top = 22.0
+offset_right = 496.2617
+offset_bottom = 64.0
+
+[node name="ActionTexturePanel" type="TextureRect" parent="UI" unique_id=1518702609]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 691.0
+offset_right = 678.0
+offset_bottom = 761.0
+texture = SubResource("AtlasTexture_b3802")
+
+[node name="ActionLabel" type="Label" parent="UI/ActionTexturePanel" unique_id=1696523053]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 94.0
+offset_top = -53.0
+offset_right = 164.0
+offset_bottom = -4.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b1goy")
+text = "Action"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionTextLabel" type="RichTextLabel" parent="UI/ActionTexturePanel" unique_id=1586891471]
+layout_mode = 0
+offset_left = 163.0
+offset_top = 22.0
+offset_right = 503.0
+offset_bottom = 62.0
+
+[node name="Details" type="TextureButton" parent="UI" unique_id=1797434555]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -66.0
+offset_top = -167.0
+offset_right = 77.0
+offset_bottom = -49.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_fevyy")
+texture_pressed = SubResource("AtlasTexture_hibaj")
+stretch_mode = 0
+
+[node name="DetailsLabel" type="Label" parent="UI/Details" unique_id=1891289118]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -11.5
+offset_right = 27.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_b1goy")
+theme_override_font_sizes/font_size = 25
+text = "Details"
+
+[node name="Menu" type="TextureButton" parent="UI" unique_id=25299859]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 124.0
+offset_top = -176.0
+offset_right = 624.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_fevyy")
+texture_pressed = SubResource("AtlasTexture_hibaj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MenuLabel" type="Label" parent="UI/Menu" unique_id=2035323613]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -11.5
+offset_right = 27.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_b1goy")
+theme_override_font_sizes/font_size = 20
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="Options" type="TextureButton" parent="UI" unique_id=1731783711]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 125.0
+offset_top = -126.0
+offset_right = 625.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_fevyy")
+texture_pressed = SubResource("AtlasTexture_hibaj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="OptionsLabel" type="Label" parent="UI/Options" unique_id=359676182]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -11.5
+offset_right = 27.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_b1goy")
+theme_override_font_sizes/font_size = 20
+text = "Options"
+horizontal_alignment = 1
+
+[node name="TechTree" type="TextureButton" parent="UI" unique_id=1886143189]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 126.0
+offset_top = -77.0
+offset_right = 626.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_fevyy")
+texture_pressed = SubResource("AtlasTexture_hibaj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TechTreeLabel" type="Label" parent="UI/TechTree" unique_id=1547788003]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -11.5
+offset_right = 27.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_b1goy")
+theme_override_font_sizes/font_size = 20
+text = "Tech Tree"
+horizontal_alignment = 1
+
+[node name="FoodTexturePanel" type="TextureRect" parent="UI" unique_id=733734625]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 24.0
+offset_right = 356.0
+offset_bottom = 89.0
+texture = SubResource("AtlasTexture_pdsj5")
+
+[node name="FoodLabel" type="Label" parent="UI/FoodTexturePanel" unique_id=584954691]
+layout_mode = 1
+offset_left = 45.0
+offset_top = 7.0
+offset_right = 115.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b1goy")
+theme_override_font_sizes/font_size = 20
+text = "Food"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FoodTextLabel" type="RichTextLabel" parent="UI/FoodTexturePanel" unique_id=1565158966]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 19.0
+offset_right = 258.0
+offset_bottom = 45.0
+
+[node name="ExpTexturePanel" type="TextureRect" parent="UI" unique_id=244274517]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 23.0
+offset_right = 697.0
+offset_bottom = 88.0
+texture = SubResource("AtlasTexture_pdsj5")
+
+[node name="ExpTextLabel" type="RichTextLabel" parent="UI/ExpTexturePanel" unique_id=796007981]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 18.0
+offset_right = 261.0
+offset_bottom = 46.0
+
+[node name="ExpLabel" type="Label" parent="UI/ExpTexturePanel" unique_id=791382269]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.5
+offset_top = 7.0
+offset_right = -57.5
+offset_bottom = 56.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b1goy")
+theme_override_font_sizes/font_size = 20
+text = "Exp"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AchievementsButton" type="TextureButton" parent="UI" unique_id=1948226500]
+layout_mode = 0
+offset_left = 1310.0
+offset_top = 28.0
+offset_right = 1412.0
+offset_bottom = 82.0
+texture_normal = SubResource("AtlasTexture_1w6v2")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Achievements" type="TextureRect" parent="UI" unique_id=1427517048]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -424.0
+offset_top = -285.0
+offset_right = 480.0
+offset_bottom = 159.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_ueoa1")
+script = ExtResource("1_j04uc")
+
+[node name="Label" type="Label" parent="UI/Achievements" unique_id=890975221]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -123.0
+offset_top = 35.0
+offset_right = 118.0
+offset_bottom = 81.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_b1goy")
+theme_override_font_sizes/font_size = 50
+text = "Achievements"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/Achievements" unique_id=843429619]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.5
+offset_top = -110.0
+offset_right = 392.5
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Achievements/ScrollContainer" unique_id=505731182]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="UI/Achievements/ScrollContainer/VBoxContainer" unique_id=11419439]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6vcvc")
+
+[node name="TextureRect2" type="TextureRect" parent="UI/Achievements/ScrollContainer/VBoxContainer" unique_id=1083718748]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6vcvc")
+
+[node name="TextureRect3" type="TextureRect" parent="UI/Achievements/ScrollContainer/VBoxContainer" unique_id=421002481]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6vcvc")
+
+[node name="TextureRect4" type="TextureRect" parent="UI/Achievements/ScrollContainer/VBoxContainer" unique_id=1308446010]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6vcvc")
+
+[node name="TextureRect5" type="TextureRect" parent="UI/Achievements/ScrollContainer/VBoxContainer" unique_id=63307383]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6vcvc")
+
+[node name="TextureRect6" type="TextureRect" parent="UI/Achievements/ScrollContainer/VBoxContainer" unique_id=1350029633]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6vcvc")
+
+[node name="TextureRect7" type="TextureRect" parent="UI/Achievements/ScrollContainer/VBoxContainer" unique_id=1144606653]
+layout_mode = 2
+texture = SubResource("AtlasTexture_6vcvc")
+
+[node name="HideUI" type="TextureButton" parent="." unique_id=1810608793]
+offset_left = 1457.0
+offset_top = 28.0
+offset_right = 1559.0
+offset_bottom = 82.0
+toggle_mode = true
+texture_normal = SubResource("AtlasTexture_ee4r6")
+texture_pressed = SubResource("AtlasTexture_gt3je")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="pressed" from="UI/AchievementsButton" to="UI/Achievements" method="_on_achievements_button_pressed"]
+[connection signal="pressed" from="HideUI" to="UI" method="_on_hide_ui_pressed"]
