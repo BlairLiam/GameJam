@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://donnt634rol2c"]
+
+[ext_resource type="Texture2D" uid="uid://copwt3nf5133n" path="res://Graphics/UI Elements/UI Elements/Buttons/SmallRedSquareButton_Regular.png" id="1_3kf3n"]
+[ext_resource type="Script" uid="uid://dlxidbd812kly" path="res://Scripts/menu.gd" id="1_syfuq"]
+[ext_resource type="Texture2D" uid="uid://bc1uma5uflfvu" path="res://Graphics/UI Elements/UI Elements/Buttons/SmallRedSquareButton_Pressed.png" id="3_s2c3o"]
+
+[node name="Menu" type="Control" unique_id=1118269042]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_syfuq")
+regular_button_icon = ExtResource("1_3kf3n")
+pressed_button_icon = ExtResource("3_s2c3o")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=198922598]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="." unique_id=884888647]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -68.0
+offset_right = 68.0
+offset_bottom = 68.0
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("1_3kf3n")
+flat = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_button_up"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

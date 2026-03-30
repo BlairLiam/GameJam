@@ -64,7 +64,7 @@ animations = [{
 [node name="Mango Tree" unique_id=578119270 instance=ExtResource("1_plaq5")]
 script = ExtResource("2_2xjmv")
 fruit = SubResource("Resource_0uijc")
-current_condition = 1
+fruits = 10
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="2" unique_id=479792084]
 sprite_frames = SubResource("SpriteFrames_3od3b")

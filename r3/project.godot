@@ -15,19 +15,19 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="R3"
-run/main_scene="uid://4gu5befehbnd"
+run/main_scene="uid://donnt634rol2c"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
 
 [autoload]
 
 TimeManager="*uid://f2p8v341l8g3"
+GameState="*uid://dft2qwh6s03ge"
 
 [display]
 
 window/size/viewport_width=1600
 window/size/viewport_height=800
-window/stretch/mode="canvas_items"
 
 [dotnet]
 

@@ -9,6 +9,7 @@ class_name Progression
 
 func add_exp():
 	if level >= max_level:
+		level = max_level
 		return
 	
 	experiece_points += 1

@@ -16,6 +16,8 @@
 [ext_resource type="PackedScene" uid="uid://cslbem10d755a" path="res://Scenes/Structures/Kubo.tscn" id="14_b3802"]
 [ext_resource type="Script" uid="uid://w6fhvbvc850i" path="res://Scripts/Utility/camera_2d.gd" id="15_4n42c"]
 [ext_resource type="PackedScene" uid="uid://c60tqgd5tf7w0" path="res://Scenes/Structures/StorageArea.tscn" id="15_fevyy"]
+[ext_resource type="Texture2D" uid="uid://cvr4jc3xlovtc" path="res://Graphics/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Regular.png" id="15_h1bgf"]
+[ext_resource type="Texture2D" uid="uid://d1ymx1w4ys6h7" path="res://Graphics/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Pressed.png" id="15_wsu2k"]
 [ext_resource type="Script" uid="uid://5ddq0do1utu8" path="res://Scripts/Utility/canvas_modulate.gd" id="17_fevyy"]
 [ext_resource type="Script" uid="uid://bnfd1md2nily7" path="res://Scripts/Utility/ui.gd" id="18_hibaj"]
 [ext_resource type="FontFile" uid="uid://bi8jo6e8fmjpn" path="res://Graphics/UI Elements/UI Elements/Fonts/edo.ttf" id="19_pdsj5"]
@@ -290,6 +292,14 @@ default_font_size = 30
 default_font = ExtResource("19_pdsj5")
 default_font_size = 30
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_fevyy"]
+atlas = ExtResource("15_h1bgf")
+region = Rect2(21, 16, 86, 92)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hibaj"]
+atlas = ExtResource("15_wsu2k")
+region = Rect2(21, 16, 86, 92)
+
 [node name="Main" type="Node2D" unique_id=242222134]
 script = ExtResource("1_h1m7h")
 
@@ -472,3 +482,273 @@ theme = SubResource("Theme_3pmx8")
 text = "0"
 fit_content = true
 horizontal_alignment = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1167637265]
+visible = false
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=890359018]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+mouse_filter = 1
+
+[node name="NamePanel" type="Panel" parent="CanvasLayer/UI" unique_id=857269246]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 39.0
+offset_top = -201.0
+offset_right = 681.0
+offset_bottom = -129.0
+grow_vertical = 0
+
+[node name="NameTextLabel" type="RichTextLabel" parent="CanvasLayer/UI/NamePanel" unique_id=1128990012]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0062305294
+anchor_right = 0.0062305294
+offset_left = 82.0
+offset_top = 4.0
+offset_right = 636.0
+offset_bottom = 70.0
+
+[node name="NameLabel" type="Label" parent="CanvasLayer/UI" unique_id=827923866]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -188.0
+offset_right = 119.0
+offset_bottom = -139.0
+grow_vertical = 0
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FoodPanel" type="Panel" parent="CanvasLayer/UI" unique_id=231056364]
+layout_mode = 1
+offset_left = 71.0
+offset_top = 44.0
+offset_right = 488.0
+offset_bottom = 116.0
+
+[node name="FoodTextLabel" type="RichTextLabel" parent="CanvasLayer/UI/FoodPanel" unique_id=1585757488]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 8.0
+offset_right = 403.0
+offset_bottom = 62.0
+
+[node name="FoodLabel" type="Label" parent="CanvasLayer/UI" unique_id=1327016238]
+layout_mode = 1
+offset_left = 71.0
+offset_top = 56.0
+offset_right = 141.0
+offset_bottom = 105.0
+text = "Food"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExpPanel" type="Panel" parent="CanvasLayer/UI" unique_id=459343418]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.0
+offset_top = 43.0
+offset_right = 209.0
+offset_bottom = 115.0
+grow_horizontal = 2
+
+[node name="ExpTextLabel" type="RichTextLabel" parent="CanvasLayer/UI/ExpPanel" unique_id=1619069001]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 6.0
+offset_right = 401.0
+offset_bottom = 63.0
+
+[node name="ExpLabel" type="Label" parent="CanvasLayer/UI" unique_id=201507438]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -198.0
+offset_top = 54.0
+offset_right = -128.0
+offset_bottom = 103.0
+grow_horizontal = 2
+text = "Exp"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionPanel" type="Panel" parent="CanvasLayer/UI" unique_id=28803720]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 41.0
+offset_top = -126.0
+offset_right = 681.0
+offset_bottom = -7.0
+grow_vertical = 0
+
+[node name="ActionTextLabel" type="RichTextLabel" parent="CanvasLayer/UI/ActionPanel" unique_id=601952350]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 9.0
+offset_right = 633.0
+offset_bottom = 113.0
+
+[node name="ActionLabel" type="Label" parent="CanvasLayer/UI" unique_id=491042962]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 55.0
+offset_top = -88.0
+offset_right = 125.0
+offset_bottom = -39.0
+grow_vertical = 0
+text = "Action"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Details" type="TextureButton" parent="CanvasLayer/UI" unique_id=127670207]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -86.0
+offset_top = -213.0
+offset_right = 171.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_fevyy")
+texture_pressed = SubResource("AtlasTexture_hibaj")
+stretch_mode = 0
+
+[node name="DetailsLabel" type="Label" parent="CanvasLayer/UI/Details" unique_id=1521273040]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -11.5
+offset_right = 27.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Details"
+
+[node name="Menu" type="TextureButton" parent="CanvasLayer/UI" unique_id=990225545]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 207.0
+offset_top = -204.0
+offset_right = 761.0
+offset_bottom = -137.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_fevyy")
+texture_pressed = SubResource("AtlasTexture_hibaj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MenuLabel" type="Label" parent="CanvasLayer/UI/Menu" unique_id=642141215]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -11.5
+offset_right = 27.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Menu"
+horizontal_alignment = 1
+
+[node name="Options" type="TextureButton" parent="CanvasLayer/UI" unique_id=1927117945]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 207.0
+offset_top = -137.0
+offset_right = 761.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_fevyy")
+texture_pressed = SubResource("AtlasTexture_hibaj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="OptionsLabel" type="Label" parent="CanvasLayer/UI/Options" unique_id=957091085]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -11.5
+offset_right = 27.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Options"
+horizontal_alignment = 1
+
+[node name="TechTree" type="TextureButton" parent="CanvasLayer/UI" unique_id=1708466330]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 207.0
+offset_top = -71.0
+offset_right = 761.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = SubResource("AtlasTexture_fevyy")
+texture_pressed = SubResource("AtlasTexture_hibaj")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="TechTreeLabel" type="Label" parent="CanvasLayer/UI/TechTree" unique_id=891359189]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -27.0
+offset_top = -11.5
+offset_right = 27.0
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Tech Tree"
+horizontal_alignment = 1
