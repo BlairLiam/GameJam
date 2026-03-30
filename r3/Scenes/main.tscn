@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://cvr4jc3xlovtc" path="res://Graphics/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Regular.png" id="15_h1bgf"]
 [ext_resource type="Texture2D" uid="uid://d1ymx1w4ys6h7" path="res://Graphics/UI Elements/UI Elements/Buttons/SmallBlueSquareButton_Pressed.png" id="15_wsu2k"]
 [ext_resource type="Script" uid="uid://5ddq0do1utu8" path="res://Scripts/Utility/canvas_modulate.gd" id="17_fevyy"]
-[ext_resource type="PackedScene" uid="uid://dsnv0knced43t" path="res://Scenes/UI.tscn" id="20_hibaj"]
+[ext_resource type="PackedScene" path="res://Scenes/UI.tscn" id="20_hibaj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_km2bi"]
 texture = ExtResource("2_erwvk")
@@ -251,7 +251,7 @@ sources/2 = SubResource("TileSetScenesCollectionSource_hibaj")
 
 [sub_resource type="Gradient" id="Gradient_fevyy"]
 offsets = PackedFloat32Array(0, 0.2, 0.25, 0.3, 0.5, 0.7, 0.75, 0.8, 1)
-colors = PackedColorArray(0.2509804, 0.2509804, 0.5019608, 1, 0.2509804, 0.2509804, 0.5019608, 1, 1, 0.88235295, 0.78431374, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0.5019608, 0.2509804, 1, 0.2509804, 0.2509804, 0.5019608, 1, 0.2509804, 0.2509804, 0.5019608, 1)
+colors = PackedColorArray(0.2509804, 0.2509804, 0.5019608, 1, 0.2509804, 0.2509804, 0.5019608, 1, 1, 0.88235295, 0.78431374, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5019608, 0.2509804, 1, 0.2509804, 0.2509804, 0.5019608, 1, 0.2509804, 0.2509804, 0.5019608, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fevyy"]
 atlas = ExtResource("15_h1bgf")
@@ -319,6 +319,8 @@ script = ExtResource("15_4n42c")
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1840310577]
 script = ExtResource("17_fevyy")
 day_night_gradient = SubResource("Gradient_fevyy")
+
+[node name="CanvasLayer2" parent="." unique_id=1711804671 instance=ExtResource("20_hibaj")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1167637265]
 visible = false
@@ -589,5 +591,3 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Tech Tree"
 horizontal_alignment = 1
-
-[node name="CanvasLayer2" parent="." unique_id=1711804671 instance=ExtResource("20_hibaj")]
