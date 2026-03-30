@@ -22,6 +22,8 @@ func interact(villager: Villagers) -> void:
 			update_visuals()
 		else:
 			print(diagnose_current_condition(villager))
+			if villager.is_selected:
+				GameUI.change_action_text(diagnose_current_condition(villager))
 		return
 
 	if fruits > 0:
