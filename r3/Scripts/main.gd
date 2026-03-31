@@ -2,8 +2,6 @@ extends Node2D
 
 class_name Main
 
-static var food: int = 0
-
 @export var character_scene: PackedScene = preload("res://Scenes/Villagers/Villagers.tscn")
 
 @onready var camera: Camera2D = $Camera2D
@@ -25,12 +23,11 @@ func _input(event: InputEvent) -> void:
 		
 	if event.is_action_pressed("debug"): 
 		TimeManager.time += 1 / 24.0
-		TimeManager.emit_signal("hour_changed", TimeManager.get_hour())
 		print(TimeManager.get_hour())
 		
 func _ready() -> void:
-	spawn_character(Vector2(32, 32))
-	spawn_character(Vector2(32, 544))
+	for i in range(10):
+		spawn_character(Vector2(32, 32))
 	
 func setup_grid() -> void:
 	path_grid.region = tile_layer.get_used_rect()
@@ -67,6 +64,8 @@ func _on_character_clicked(character: Villagers) -> void:
 		selected_character.is_selected = false
 		selected_character = character
 		selected_character.is_selected = true
+		
+		GameState.villager_inspected.emit(character)
 	else:
 		selected_character = character
 		selected_character.is_selected = true

@@ -6,7 +6,6 @@ class_name Activity
 @onready var movement: Movement = $Movement
 @onready var inventory: Inventory = $Inventory
 @onready var interaction: Interaction = $Interaction
-@onready var progression: Progression = $Progression
 
 @onready var movement_timer: Timer = $"Movement Timer"
 @onready var interaction_timer: Timer = $"Interaction Timer"
@@ -22,12 +21,11 @@ func _ready() -> void:
 	
 	movement_timer.start()
 	
-func start() -> void:	
+func start() -> void:
 	if villager.inventory.item.type != Items.Item.NOTHING:
 		storing()
 	else:
 		var hour: int = TimeManager.get_hour()
-		
 		if hour >= 22 or hour < 6:
 			go_to_sleep_area()
 		else:
@@ -65,4 +63,4 @@ func _on_movement_timer_timeout() -> void:
 func _on_hour_changed(hour: int) -> void:
 	if hour == 6:
 		villager.visible = true
-		start()
+		movement_timer.start()
