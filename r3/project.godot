@@ -28,6 +28,7 @@ GameState="*uid://dft2qwh6s03ge"
 
 window/size/viewport_width=1600
 window/size/viewport_height=800
+mouse_cursor/custom_image="uid://cl3wbad0vhy7j"
 
 [dotnet]
 

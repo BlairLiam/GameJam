@@ -22,12 +22,10 @@ func interact(villager: Villagers) -> void:
 			update_visuals()
 		else:
 			print(diagnose_current_condition(villager))
-			if villager.is_selected:
-				GameUI.change_action_text(diagnose_current_condition(villager))
 		return
 
 	if fruits > 0:
-		fruits = max(0, fruits - villager.progression.level)
+		fruits = max(0, fruits - villager.level)
 		villager.inventory.give(fruit)
 		update_visuals()
 
@@ -40,7 +38,7 @@ func heal_tree(villager: Villagers) -> void:
 	var item: Items = villager.inventory.item
 		
 	if CURES.get(item.type) == current_condition:
-		HP += villager.progression.level
+		HP += villager.level
 		print("The tree looks better...")
 		
 		if HP >= max_HP:

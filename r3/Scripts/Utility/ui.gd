@@ -2,43 +2,38 @@ extends Control
 
 class_name GameUI
 
+@onready var population: RichTextLabel = $Population/MarginContainer/Population
+@onready var clock: RichTextLabel = $Clock/MarginContainer/Clock
 @onready var villager_name: RichTextLabel = $Villager/MarginContainer/VBoxContainer/Name
 @onready var action: RichTextLabel = $Villager/MarginContainer/VBoxContainer/Action
 @onready var food: RichTextLabel = $Food/MarginContainer/Food
 @onready var level: RichTextLabel = $Exp/MarginContainer/Level
 @onready var experience_points: ProgressBar = $Exp
 
-static var ui_name: RichTextLabel
-static var ui_action: RichTextLabel
-static var ui_food: RichTextLabel
-static var ui_level: RichTextLabel
-static var ui_exp: ProgressBar
-
 func _ready() -> void:
-	ui_name = villager_name
-	ui_action = action
-	ui_food = food
-	ui_level = level
-	ui_exp = experience_points
+	GameState.villager_inspected.connect(_on_villager_inspected)
 	GameState.food_changed.connect(change_food_text)
+	
+	TimeManager.minute_changed.connect(change_time_text)
+	
+	change_food_text(GameState.food_supply)
 
-static func change_action_text(text: String):
-	ui_action.text = text
+func _on_villager_inspected(villager: Villagers):
+	villager_name.text = villager.villager_name
+	experience_points.value = villager.experience_points
+	level.text = str(villager.level)
 	
-static func change_name_text(text: String):
-	ui_name.text = text
+func change_food_text(amount: int):
+	food.text = str(amount)
+
+func change_exp_text(amount: int):
+	experience_points.text = str(amount)
 	
-static func change_food_text(amount: int):
-	ui_food.text = str(amount)
+func change_level_text(amount: int) -> void:
+	level.text = str(amount)
 	
-static func change_level_text(amount: int):
-	ui_food.text = str(amount)
+func change_population_text(amount: int) -> void:
+	population.text = str(amount)
 	
-static func change_exp_bar(amount: int):
-	ui_exp.value = amount
-	
-static func apply_villager_stats(villager: Villagers):
-	change_action_text("")
-	change_exp_bar(villager.progression.experiece_points)
-	change_name_text(villager.villager_name)
-	change_level_text(villager.progression.level)
+func change_time_text() -> void:
+	clock.text = TimeManager.get_time_string()

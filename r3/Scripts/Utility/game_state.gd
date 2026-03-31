@@ -2,12 +2,19 @@ extends Node
 
 signal food_changed(current_amount: int)
 signal game_over
+signal villager_inspected(villager: Villagers)
 
-@export var food_supply: float = 100.0
-@export var is_game_active: bool = true
+@export var food_supply: int = 100
+@export var is_game_active: bool = false
 
 func _ready() -> void:
 	TimeManager.hour_changed.connect(_on_hour_passed)
+	
+func start() -> void:
+	is_game_active = true
+	
+func stop() -> void:
+	is_game_active = false
 	
 func add_food(food: int):
 	food_supply += food
@@ -16,7 +23,7 @@ func add_food(food: int):
 func _on_hour_passed(_hour: int) -> void:
 	if not is_game_active: return
 	
-	var consumption = calculate_total_consumption()
+	var consumption: int = calculate_total_consumption()
 	food_supply -= consumption
 	
 	food_supply = max(0, food_supply)
@@ -25,15 +32,15 @@ func _on_hour_passed(_hour: int) -> void:
 	if food_supply <= 0:
 		trigger_game_over()
 
-func calculate_total_consumption() -> float:
+func calculate_total_consumption() -> int:
 	var total: float = 0.0
 	var villagers = get_tree().get_nodes_in_group("villagers")
 	
 	for v in villagers:
-		var level = v.activity.progression.level
-		total += (1 * level) 
+		var new_level = v.level
+		total += (1 * new_level)
 	
-	return total
+	return int(total)
 
 func trigger_game_over():
 	is_game_active = false

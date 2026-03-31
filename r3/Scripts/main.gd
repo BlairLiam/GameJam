@@ -65,7 +65,7 @@ func _on_character_clicked(character: Villagers) -> void:
 		selected_character = character
 		selected_character.is_selected = true
 		
-		GameUI.apply_villager_stats(character)
+		GameState.villager_inspected.emit(character)
 	else:
 		selected_character = character
 		selected_character.is_selected = true

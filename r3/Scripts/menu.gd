@@ -12,3 +12,9 @@ func _on_button_button_down() -> void:
 
 func _on_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+	GameState.food_supply = 100
+	
+	TimeManager.day_count = 0
+	TimeManager.past_hour = -1
+	TimeManager.past_minute = -1
+	TimeManager.time = 0.5

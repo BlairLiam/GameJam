@@ -18,7 +18,7 @@ func interact(villager: Villagers) -> void:
 		return
 
 	if fruits > 0:
-		fruits = max(0, fruits - villager.progression.level)
+		fruits = max(0, fruits - villager.level)
 		villager.inventory.give(fruit)
 		update_visuals()
 

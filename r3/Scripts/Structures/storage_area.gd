@@ -9,9 +9,7 @@ func interact(villager: Villagers) -> void:
 	var item_type: Items.Item = villager.inventory.item.type
 		
 	if Items.is_food(item_type):
-		GameState.add_food(villager.progression.level)
+		GameState.add_food(villager.level)
+		villager.add_exp()
 
 	villager.inventory.take()
-	
-	print(GameState.food_supply)
-	
